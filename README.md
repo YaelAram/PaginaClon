@@ -51,6 +51,26 @@ cifradas para obtener la información descifrada.
 especificados por el archivo _.gitignore_ y ocurre lo mismo en el caso del archivo _.env_ que contiene entre otras cosas
 la llave utilizada para el encriptado AES.**
 
+### Requisitos previos
+
+- NodeJS, la versión utiliza en desarrollo fue NodeJS 20.15.1
+- NPM, la versión utilizada en desarrollo fue NPM 10.8.2
+
+Reconstruir el archivo _.env_ para las variables de entorno con la estructura siguiente:
+
+```
+PORT=
+PASS_PHRASE=
+```
+
+Donde:
+
+- PORT: Indica el puerto sobre el cual va a ser montado el servidor.
+- PASS_PHRASE: Indica la llave secreta utilizada para encriptar la información.
+
+**Nota: El archivo _.env_template_ fue creado para facilitar la tarea de creación del archivo de variables
+de entorno.**
+
 ### Tecnologías Utilizadas
 
 - **NodeJS**: Nos permite ejecutar JavaScript fuera del navegador, adicionalmente utilizamos parte del framework para
@@ -91,6 +111,11 @@ esta plataforma ofrece dos modalidades de login:
 
 1. Utilizando una cuenta de Gmail **@aragon.unam.mx**
 2. Utilizando el número de cuenta del alumno y una contraseña.
+
+### Requisitos previos
+
+- NodeJS, la versión utiliza en desarrollo fue NodeJS 20.15.1
+- NPM, la versión utilizada en desarrollo fue NPM 10.8.2
 
 ### Tecnologías empleadas
 

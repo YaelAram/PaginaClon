@@ -18,6 +18,26 @@ la llave utilizada para el encriptado AES.**
 materia de Seguridad Informática del ciclo escolar 2025-1 por lo que cualquier uso malicioso es responsabilidad del
 usuario que haya parcial o totalmente clonado el repositorio.**
 
+## Requisitos previos
+
+- NodeJS, la versión utiliza en desarrollo fue NodeJS 20.15.1
+- NPM, la versión utilizada en desarrollo fue NPM 10.8.2
+
+Reconstruir el archivo _.env_ para las variables de entorno con la estructura siguiente:
+
+```
+PORT=
+PASS_PHRASE=
+```
+
+Donde:
+
+- PORT: Indica el puerto sobre el cual va a ser montado el servidor.
+- PASS_PHRASE: Indica la llave secreta utilizada para encriptar la información.
+
+**Nota: El archivo _.env_template_ fue creado para facilitar la tarea de creación del archivo de variables
+de entorno.**
+
 ## Tecnologías Utilizadas
 
 - **NodeJS**: Nos permite ejecutar JavaScript fuera del navegador, adicionalmente utilizamos parte del framework para

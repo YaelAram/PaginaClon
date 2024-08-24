@@ -13,6 +13,11 @@ esta plataforma ofrece dos modalidades de login:
 materia de Seguridad Informática del ciclo escolar 2025-1 por lo que cualquier uso malicioso es responsabilidad del
 usuario que haya parcial o totalmente clonado el repositorio.**
 
+## Requisitos previos
+
+- NodeJS, la versión utiliza en desarrollo fue NodeJS 20.15.1
+- NPM, la versión utilizada en desarrollo fue NPM 10.8.2
+
 ## Tecnologías empleadas
 
 - **Astro**: Un framework de desarrollo de páginas web estáticas con la comodidad de agrupar elementos y lógica en
