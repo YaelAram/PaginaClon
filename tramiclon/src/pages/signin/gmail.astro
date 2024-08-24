@@ -1,0 +1,47 @@
+---
+import MaterialLayout from '../../layouts/MaterialLayout.astro';
+---
+
+<MaterialLayout title="Iniciar sesión: Cuentas de Google" script="/scripts/gmail.js">
+  <div class="flex justify-space-between mt-24">
+    <hgroup>
+      <h1 class="roboto-regular mt-0 mb-16">Inicia Sesión</h1>
+      <p class="roboto-regular">Utiliza tu cuenta de Google</p>
+    </hgroup>
+    <form class="flex flex-column">
+      <md-outlined-text-field label="Correo electrónico o teléfono" type="email" required/>
+      <a href="" class="roboto-regular forget text-small">
+        ¿Has olvidado tu correo electrónico?
+      </a>
+      <p class="roboto-regular mt-48 text-small">
+        ¿No es tu ordenador? Usa el modo invitado para iniciar sesión de forma privada.
+        <a href="https://support.google.com/chrome/answer/6130773?hl=es">
+          Más información sobre usar el modo invitado
+        </a>.
+      </p>
+      <div class="flex mt-48 btn-group">
+        <md-text-button type="button" id="secondaryBtn">
+          Crear Cuenta
+        </md-text-button>
+        <md-filled-button type="submit">
+          Siguiente
+        </md-filled-button>
+      </div>
+    </form>
+  </div>
+</MaterialLayout>
+
+<style>  
+  p {
+    color: rgb(48, 48, 48);
+  }
+
+  .forget {
+    margin-top: 8px;
+  }
+
+  .btn-group {
+    justify-content: flex-end;
+    gap: 16px;
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+
+import CuentasFES from '../assets/cuentas-aragon.png';
+---
+
+<footer class="flex flex-column justify-center align-center">
+  <button type="button" class="btn-go-top">
+    <img src="/arrow_up.svg" loading="lazy" alt="Ir a inicio" class="icon">
+  </button>
+  <div class="flex mt-64">
+    <article>
+      <h6 class="spacing-3">SERVICIOS EN LÍNEA</h6>
+      <ul>
+        <li>
+          <a href="https://plataformaeducativa.aragon.unam.mx/" class="text-small text-blue">
+            Plataforma educativa Aragón
+          </a>
+        </li>
+        <li>
+          <a href="http://cle-aragon.unam.mx/" class="text-small text-blue">
+            Centro de Lenguas
+          </a>
+        </li>
+        <li>
+          <a href="https://cedco.aragon.unam.mx/sigedco/eventos/CEDCO/" class="text-small text-blue">
+            Cursos y Diplomados
+          </a>
+        </li>
+        <li>
+          <a href="http://aragon.dgae.unam.mx/" class="text-small text-blue">
+            Reinscripción
+          </a>
+        </li>
+        <li>
+          <a href="https://cedco.aragon.unam.mx/practicas-campo/app.php/" class="text-small text-blue">
+            Prácticas de Campo
+          </a>
+        </li>
+      </ul>
+    </article>
+    <article>
+      <Image 
+        src={CuentasFES} 
+        alt="Logo Servicio de Cuentas de la FES Aragón"
+        widths={[480, 720, 1024, 1600]}
+        sizes="(max-width: 600px) 480px, (max-width: 900px) 720px, (max-width: 1300px) 1024px, 1600px"
+        loading="lazy"
+        class="logo" />
+      <p class="logo-desc text-small">
+        Este servicio está habilitado para que 
+        <a href="https://tramifes.aragon.unam.mx/" class="text-small text-blue">inicies sesión</a>
+        con tu cuenta <strong>@aragon</strong>.
+      </p>
+    </article>
+  </div>
+  <section class="mt-64 mb-64">
+    <p class="text-gray text-small">
+      Hecho en México, Universidad Nacional Autónoma de México (UNAM), todos los derechos reservados 2024. 
+      Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente 
+      completa y su dirección electrónica. De otra forma, requiere permiso previo por escrito de la institución.
+    </p>
+  </section>
+</footer>
+
+<style>
+  footer {
+    margin-top: 184px;
+  }
+
+  .btn-go-top {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f86942;
+    border: none;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  div {
+    justify-content: flex-start;
+    gap: 64px;
+    width: 55vw;
+  }
+
+  .logo {
+    width: 250px;
+    height: 100px;
+  }
+
+  .logo-desc {
+    width: 260px;
+  }
+
+  h6 {
+    color: #cdcdcd;
+  }
+
+  a:hover {
+    color: rgb(34, 34, 34);
+  }
+
+  section {
+    width: 55vw;
+  }
+</style>
+
+<script>
+  document.querySelector(".btn-go-top").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

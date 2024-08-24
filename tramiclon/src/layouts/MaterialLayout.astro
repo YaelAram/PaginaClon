@@ -1,0 +1,183 @@
+---
+interface Props {
+  title: string;
+  script: string;
+}
+
+const {title, script} = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/google.svg" type="image/x-icon">
+  <title>{ title }</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/styles/global.css">
+  <script is:inline src={script} defer></script>
+</head>
+<body>
+  <main class="flex flex-column justify-center align-center">
+    <article>
+      <img src="/google.svg" alt="Logo Google">
+      <slot />
+    </article>
+    <section class="flex justify-space-between mt-16">
+      <md-outlined-select>
+        <md-select-option value="es-MX" selected>
+          <div slot="headline">Español (México)</div>
+        </md-select-option>
+        <md-select-option value="en-US">
+          <div slot="headline">English (United States)</div>
+        </md-select-option>
+      </md-outlined-select>
+      <div class="flex">
+        <a href="https://support.google.com/accounts?hl=es&p=account_iph" class="roboto-regular text-small">
+          Ayuda
+        </a>
+        <a href="https://policies.google.com/privacy?gl=MX&hl=es" class="roboto-regular text-small">
+          Privacidad
+        </a>
+        <a href="https://policies.google.com/terms?gl=MX&hl=es" class="roboto-regular text-small">
+          Términos
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+<style is:global>
+  h1 {
+    font-size: xx-large;
+  }
+
+  form {
+    width: 50%;
+  }
+
+  a {
+    color: #0c56d1;
+    text-decoration: none;
+  }
+
+  .btn-group {
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  label {
+    justify-content: flex-start;
+    color: #202020;
+    cursor: pointer;
+  }
+</style>
+
+<style>
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  main {
+    box-sizing: border-box;
+    background-color: #f0f4f9;
+    height: 100vh;
+    animation: swipe 0.3s ease-in-out;
+  }  
+
+  article {
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 70vw;
+    padding: 24px;
+    background-color: white;
+  }
+
+  section {
+    width: 72vw;
+  }
+
+  section > div {
+    width: 30vw;
+    justify-content: flex-end;
+    gap: 32px;
+  }
+
+  section a {
+    color: rgb(77, 77, 77);
+  }
+
+  img {
+    width: 48px;
+    height: 48px;
+  }
+
+  @keyframes swipe {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<script>
+import '@material/web/button/filled-button';
+import '@material/web/button/text-button';
+import '@material/web/checkbox/checkbox';
+import '@material/web/chips/assist-chip';
+import '@material/web/icon/icon';
+import '@material/web/select/outlined-select';
+import '@material/web/select/select-option';
+import '@material/web/textfield/outlined-text-field';
+
+document.addEventListener("DOMContentLoaded", () => {
+  const shadow = document.querySelector("md-outlined-select").shadowRoot;
+  const label = (shadow.querySelector("#label") as HTMLDivElement);
+  
+  label.style.padding = "8px";
+  label.style.fontSize = "small";
+  label.style.color = "#303030"
+});
+</script>
+
+<style is:global>
+  :root {
+    --md-sys-color-primary: #0c56d1;
+  }
+
+  md-outlined-select {
+    --md-sys-color-outline: transparent;
+  }
+
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+</style>

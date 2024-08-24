@@ -1,0 +1,57 @@
+---
+import MaterialLayout from '../../layouts/MaterialLayout.astro';
+---
+
+<MaterialLayout title="Iniciar sesión: Cuentas de Google" script="/scripts/otp.js">
+  <div class="flex justify-space-between">
+    <div>
+      <h1 class="roboto-regular">Verificación de dos pasos</h1>
+      <p class="roboto-regular text-dark-gray">
+        Para proteger tu cuenta, Google quiere verificar que eres tu quien esta 
+        intentando iniciar sesión.
+      </p>
+      <md-assist-chip label="">
+        <md-icon slot="icon">account_circle</md-icon>
+      </md-assist-chip>
+    </div>
+    <article>
+      <h2 class="roboto-regular mt-24">Verificación de dos pasos</h2>
+      <p class="text-dark-gray mt-0 mb-24 text-small roboto-regular">
+        Recibir un código de verificación mediante la aplicación <strong>Google Authenticator</strong>
+      </p>
+      <form class="flex flex-column">
+        <md-outlined-text-field label="Introduce el código" type="password" required/>
+        <label class="roboto-regular flex align-center text-small">
+          <md-checkbox touch-target="wrapper" />
+          No volver a preguntar para este dispositivo
+        </label>
+        <div class="flex btn-group mt-64">
+          <md-text-button type="button" id="secondaryBtn">
+            Probar otra manera
+          </md-text-button>
+          <md-filled-button type="submit">
+            Siguiente
+          </md-filled-button>
+        </div>
+      </form>
+    </article>
+  </div>
+</MaterialLayout>
+
+<style>
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  .text-dark-gray {
+    color: #303030;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  article {
+    width: 60%;
+  }
+</style>

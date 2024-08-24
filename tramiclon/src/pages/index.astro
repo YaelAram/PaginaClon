@@ -1,0 +1,46 @@
+---
+import OpcionLogin from '../components/OpcionLogin.astro';
+import BootstrapLayout from '../layouts/BootstrapLayout.astro';
+---
+
+<BootstrapLayout title="TramiFES - Iniciar sesión | UNAM">
+	<aside>
+		<h6 class="spacing-3 weight-normal">¿CUÁL ES MI CONTRASEÑA?</h6>
+		<p class="text-small text-gray">
+			<strong>Alumno</strong>: Como alumno de la FES Aragón la contraseña de tu cuenta es la misma que usas cada semestre 
+			para ingresar al sistema de inscripciones.
+		</p>
+	</aside>
+
+	<main>
+		<article>
+			<h5 class="mb-24 weight-normal spacing-3">IMPORTANTE</h5>
+			<p class="text-gray">
+				Cuando hagas clic en “Iniciar Sesión” serás redirigido a la página de login de Google. Esto sucede 
+				porque la Plataforma TramiFES trabaja en conjunto con la G Suite. Si en tu navegador ya tienes iniciada una 
+				sesión con otra cuenta de Google debes cerrarla.
+			</p>
+			<p class="text-gray">
+				Debe ingresar con tu cuenta <strong>@aragon.unam.mx</strong> y con tu constraseña del sistema de inscripciones
+				en caso de ser alumno.
+			</p>
+		</article>
+		<OpcionLogin 
+			titulo="Alumnos con cuenta @aragon" 
+			mensaje="Si posees tu cuenta @aragon.unam.mx inicia sesión con el siguiente botón:"
+			ruta="/signin/gmail" />
+		<OpcionLogin 
+			titulo="Alumnos sin cuenta @aragon" 
+			mensaje="Si no posees tu cuenta @aragon.unam.mx debes iniciar sesión con el siguiente botón:"
+			ruta="/alumnos/login" />
+		<section class="mt-112">
+			<p class="text-gray">
+				Si eres alumno activo de la FES Aragón, para iniciar sesión debes tener una cuenta 
+				<strong>@aragon.unam.mx</strong>. Si todavia no la tienes puedes hacer clic 
+				<a href="https://plataformaeducativa.aragon.unam.mx/" class="text-blue">
+					aquí para obtenerla
+				</a>.
+			</p>
+		</section>
+	</main>
+</BootstrapLayout>

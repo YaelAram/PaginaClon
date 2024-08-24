@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+
+import LogoFES from '../assets/logo-fes.png';
+import LogoUNAM from '../assets/logo-unam.png';
+import LogoTramiFES from '../assets/tramifes-web.png';
+---
+
+<header>
+  <nav class="flex">
+    <div>
+      <Image 
+        src={LogoUNAM} 
+        alt="Logo UNAM"
+        widths={[480, 720, 1024, 1600]}
+        sizes="(max-width: 600px) 480px, (max-width: 900px) 720px, (max-width: 1300px) 1024px, 1600px"
+        loading="lazy" />
+      <Image 
+        src={LogoFES} 
+        alt="Logo FES Aragón"
+        widths={[480, 720, 1024, 1600]}
+        sizes="(max-width: 600px) 480px, (max-width: 900px) 720px, (max-width: 1300px) 1024px, 1600px"
+        loading="lazy" />
+    </div>
+    <div>
+      <a href="/">
+        <button type="button" class="btn btn-inicio">INICIO</button>
+      </a>
+      <a href="https://tramifes.aragon.unam.mx/alumnos/ayuda">
+        <button type="button" class="btn ">AYUDA</button>
+      </a>
+    </div>
+  </nav>
+  <div class="flex flex-column align-center mt-48">
+    <Image 
+      src={LogoTramiFES} 
+      alt="Logo Serivio TramiFES"
+      widths={[480, 720, 1024, 1600]}
+      sizes="(max-width: 600px) 480px, (max-width: 900px) 720px, (max-width: 1300px) 1024px, 1600px"
+      loading="lazy"
+      class="logo" />
+    <hgroup class="mt-48 mb-48">
+      <h1 class="weight-normal">Plataforma TramiFES</h1>
+      <p class="mt-16 spacing-3">INICIO DE SESIÓN</p>
+    </hgroup>
+  </div>
+</header>
+
+<style>
+  header {
+    background: linear-gradient(-3deg, #fff 14.5%, #fff 15%, #115c9f 15%, #115c9f 15.5%);
+    padding: 20px 8px;
+  }
+
+  nav {
+    justify-content: space-around;
+  }
+
+  button {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #aef56d;
+  }
+
+  button:hover, hgroup {
+    color: white;
+  }
+
+  .btn-inicio {
+    background-color: #f86942;
+    padding: 6px 20px;
+  }
+
+  .btn-ayuda {
+    background-color: transparent;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  hgroup {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+</style>

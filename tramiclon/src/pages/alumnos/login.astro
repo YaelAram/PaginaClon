@@ -1,0 +1,40 @@
+---
+import BootstrapLayout from '../../layouts/BootstrapLayout.astro';
+---
+
+<BootstrapLayout title="TramiFES - Pasantes y Exalumnos" script="/scripts/login.js">
+	<main>
+		<h2 class="weight-normal">Iniciar Sesión</h2>
+		<form autocomplete="off" class="mb-24">
+			<label for="numero-cuenta" class="form-label mt-24 weight-bold text-gray">Usuario</label>
+			<input type="text" name="no" id="numero-cuenta" class="form-control" placeholder="No. cuenta" required>
+			<label for="password-cuenta" class="form-label mt-24 weight-bold text-gray">Contraseña</label>
+			<input type="password" name="password" id="password-cuenta" class="form-control" placeholder="Contraseña" required>
+			<button type="submit" class="mt-24">Acceder</button>
+		</form>
+		<a href="https://plataformaeducativa.aragon.unam.mx/contrasenia/" class="text-blue">
+			Recuperar Contraseña
+		</a>
+	</main>
+	<aside>
+		<h5 class="weight-normal mb-24">¿Cómo inicio sesión si ya no soy alumno activo de la FES Aragón?</h5>
+		<p class="text-gray weight-normal">
+			Si eres pasante o exalumno de alguna de las licenciaturas de la FES Aragón y necesitas hacer algún trámite
+			en la Plataforma TramiFES, pero no tienes tu cuenta @aragon, debes iniciar sesión con tu número de cuenta y 
+			contraseña de Servicios Escolares.
+		</p>
+	</aside>
+</BootstrapLayout>
+
+<style>
+	main {
+		width: 55vw;
+	}
+
+	button {
+		border: 1px solid #6E7579;
+		color: #6E7579;
+		font-weight: 600;
+		padding: 4px 8px;
+	}
+</style>
